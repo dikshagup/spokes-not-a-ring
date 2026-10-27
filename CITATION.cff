@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software or its figures, please cite the paper below."
+title: "weekday-manifold: sensitivity and occupancy tests for representation manifolds"
+abstract: >-
+  Code for every figure and quoted number of "Spokes, not a Ring:
+  Revisiting the Weekday Manifold in Language Models". Measures steering sensitivity,
+  time-of-day and uncertainty encodings, and natural-text occupancy on the
+  days-of-the-week manifold in Llama-3.1-8B, Mistral-7B-v0.1 and GPT-2 XL, and
+  finds seven discrete states rather than a continuous ring.
+type: software
+license: MIT
+repository-code: "https://github.com/dikshagup/spokes-not-a-ring"
+version: "2.0.0"
+authors:
+  - family-names: Gupta
+    given-names: Diksha
+    email: 22dikshagupta@gmail.com
+  - family-names: Fruengel
+    given-names: Rieke
+  - family-names: Heimersheim
+    given-names: Stefan
+keywords:
+  - mechanistic interpretability
+  - representation manifolds
+  - activation steering
+  - large language models
+preferred-citation:
+  type: article
+  title: "Spokes, not a Ring: Revisiting the Weekday Manifold in Language Models"
+  authors:
+    - family-names: Gupta
+      given-names: Diksha
+    - family-names: Fruengel
+      given-names: Rieke
+    - family-names: Heimersheim
+      given-names: Stefan

@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.DS_Store
+
+# generated files; the result tables under experiments/results/ are tracked
+*.npz
+*.npy
+figures/*.pdf
+figures/*.png
+/data
+
+# built on first use by experiments/common/paper_style/helvetica.py
+experiments/common/paper_style/fonts/

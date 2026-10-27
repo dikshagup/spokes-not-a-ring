@@ -1,0 +1,65 @@
+# Figure style shared by every plate in the manuscript.
+#   from paper_style import helvetica
+# Helvetica is not installed in this container and cannot be: it is proprietary, and only metric
+# stub files ship with matplotlib. experiments/helvetica.py builds Helvetica-named copies of the
+# URW Nimbus Sans faces (metrically identical, the substitution LaTeX's helvet package makes) so
+# the family "Helvetica" always resolves and is embedded. Use it instead of style.use directly:
+#   import helvetica; helvetica.use()            # registers Helvetica, then applies this style
+# It raises rather than falling back silently, so a figure is never quietly set in DejaVu.
+font.family:          sans-serif
+font.sans-serif:      Helvetica, Nimbus Sans, Liberation Sans, Arial, DejaVu Sans
+font.size:            9
+
+# light frame: no box, grey spines, grey ticks
+axes.spines.top:      False
+axes.spines.right:    False
+axes.edgecolor:       0.6
+axes.linewidth:       0.8
+axes.labelcolor:      0.2
+axes.labelsize:       9
+axes.titlesize:       11
+axes.titlelocation:   left
+axes.titlepad:        8
+axes.grid:            False
+xtick.color:          0.35
+ytick.color:          0.35
+xtick.labelsize:      8.5
+ytick.labelsize:      8.5
+xtick.major.size:     3
+ytick.major.size:     3
+xtick.major.width:    0.8
+ytick.major.width:    0.8
+xtick.direction:      out
+ytick.direction:      out
+
+# colour-blind-safe cycle (Tol): red, blue, teal, orange, yellow, purple, grey
+axes.prop_cycle:      cycler('color', ['CC3311', '0077BB', '009988', 'EE7733', 'DDAA33', 'AA4499', '404040'])
+
+# math set in Helvetica too; the default dejavusans set would embed a second font
+mathtext.fontset:     custom
+mathtext.rm:          Helvetica
+mathtext.it:          Helvetica:italic
+mathtext.bf:          Helvetica:bold
+mathtext.sf:          Helvetica
+mathtext.cal:         Helvetica
+mathtext.default:     regular
+
+lines.linewidth:      2.0
+lines.solid_capstyle: round
+patch.linewidth:      0
+
+legend.frameon:       False
+legend.fontsize:      8
+legend.handlelength:  1.6
+legend.borderaxespad: 0.3
+
+figure.dpi:           150
+figure.facecolor:     white
+savefig.dpi:          150
+savefig.bbox:         tight
+savefig.facecolor:    white
+
+# embed real outlines, not Type 3 bitmapped paths (many venues reject Type 3)
+pdf.fonttype:         42
+ps.fonttype:          42
+svg.fonttype:         none

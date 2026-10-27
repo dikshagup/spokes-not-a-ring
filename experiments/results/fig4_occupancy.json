@@ -1,0 +1,43 @@
+{
+ "classes": [
+  "positive",
+  "dirty_positive"
+ ],
+ "n_fit": 16879,
+ "n_held": 32799,
+ "n_controls": 68000,
+ "pc_var": [
+  0.291326,
+  0.236105
+ ],
+ "own_centroid_rate": 0.976066,
+ "arc_interior_rate": 0.08671,
+ "median_energy_share": {
+  "weekday": 0.089362,
+  "near_miss": 0.009644,
+  "capitalised_word": 0.008138,
+  "any_token": 0.005711
+ },
+ "example_contexts": [
+  {
+   "type": "timestamp",
+   "shift_ring_radii": 0.688315,
+   "text": " share the garden with your friends. The Daily Devotional is posted everyday, {Monday}"
+  },
+  {
+   "type": "opening hours",
+   "shift_ring_radii": 0.924672,
+   "text": " the Product during business hours (between 9am and 5pm, {Monday}"
+  },
+  {
+   "type": "news attribution",
+   "shift_ring_radii": 0.850259,
+   "text": ", president and chief executive of the American Petroleum Institute, said in a statement {Thursday}"
+  },
+  {
+   "type": "plain date",
+   "shift_ring_radii": 0.843751,
+   "text": ",\u201d Geng Shuang, a Chinese foreign ministry spokesperson, told reporters on {Tuesday}"
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "classes": [
+  "positive",
+  "dirty_positive"
+ ],
+ "n_fit": 16879,
+ "n_held": 32799,
+ "n_null": 200,
+ "ring_radius_plane": 4.892969,
+ "ring_radius_6d": 7.185587,
+ "adjacent_spacing_R": 0.904916,
+ "share": {
+  "2D": {
+   "translation": 0.865545,
+   "scale": 0.100848,
+   "rotation": 0.007041,
+   "remaining": 0.026566
+  },
+  "6D": {
+   "translation": 0.83459,
+   "scale": 0.106508,
+   "rotation": 0.015126,
+   "remaining": 0.043776
+  }
+ },
+ "rotation_null_share": {
+  "2D": {
+   "mean": 0.002696,
+   "q025": 0.002499,
+   "q975": 0.002902
+  },
+  "6D": {
+   "mean": 0.020448,
+   "q025": 0.020097,
+   "q975": 0.020746
+  }
+ },
+ "shift_R": {
+  "median": 0.511513,
+  "q25": 0.341085,
+  "q75": 0.727534,
+  "q95": 1.082596
+ },
+ "scale": {
+  "median": 0.992474,
+  "q05": 0.700118,
+  "q25": 0.86965,
+  "q75": 1.137597,
+  "q95": 1.333865
+ },
+ "rotation_deg": {
+  "median_abs": 1.887032,
+  "null_median_abs": 1.032797,
+  "p90_abs": 5.036275,
+  "reflections": 0,
+  "spearman_shift_abs_theta": {
+   "rho": -0.132795,
+   "p": 0.0
+  }
+ },
+ "dispersion": {
+  "within_day_R_captured": 0.646736,
+  "within_day_R_centered": 0.232141,
+  "variance_explained_captured": 0.761866,
+  "variance_explained_centered": 0.944502
+ },
+ "spoke": {
+  "raw": {
+   "median_dist_R": 0.292462,
+   "own_rate": 0.708345
+  },
+  "T": {
+   "median_dist_R": 0.049647,
+   "own_rate": 0.998354
+  },
+  "T+S": {
+   "median_dist_R": 0.049647,
+   "own_rate": 0.998354
+  },
+  "T+S+R": {
+   "median_dist_R": 0.035348,
+   "own_rate": 0.998811
+  }
+ },
+ "centroid": {
+  "raw": {
+   "median_dist_R": 0.541244,
+   "own_rate": 0.725053
+  },
+  "T": {
+   "median_dist_R": 0.156407,
+   "own_rate": 0.994725
+  },
+  "T+S": {
+   "median_dist_R": 0.079112,
+   "own_rate": 0.998963
+  },
+  "T+S+R": {
+   "median_dist_R": 0.066446,
+   "own_rate": 0.999329
+  }
+ },
+ "example_contexts": [
+  {
+   "type": "timestamp",
+   "shift_R": 1.118223,
+   "scale": 1.115331,
+   "rotation_deg": 2.725792,
+   "text": " share the garden with your friends. The Daily Devotional is posted everyday, {Monday}"
+  },
+  {
+   "type": "opening hours",
+   "shift_R": 1.502204,
+   "scale": 1.021815,
+   "rotation_deg": 5.644271,
+   "text": " the Product during business hours (between 9am and 5pm, {Monday}"
+  },
+  {
+   "type": "news attribution",
+   "shift_R": 1.381313,
+   "scale": 0.863486,
+   "rotation_deg": -0.745239,
+   "text": ", president and chief executive of the American Petroleum Institute, said in a statement {Thursday}"
+  },
+  {
+   "type": "plain date",
+   "shift_R": 1.37074,
+   "scale": 0.809163,
+   "rotation_deg": -2.28384,
+   "text": ",\u201d Geng Shuang, a Chinese foreign ministry spokesperson, told reporters on {Tuesday}"
+  }
+ ]
+}

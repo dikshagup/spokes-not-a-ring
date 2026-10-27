@@ -1,0 +1,73 @@
+# CPU-only CI; the GPU capture stages are not run here.
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pytest:
+    name: pytest (python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Fonts for the plates
+        # the figure style raises an error if these fonts are missing
+        run: sudo apt-get update && sudo apt-get install -y fonts-urw-base35
+
+      - name: Install torch (CPU wheel)
+        # installed before the package so pip does not install the CUDA wheel
+        run: |
+          python -m pip install --upgrade pip
+          pip install --index-url https://download.pytorch.org/whl/cpu 'torch>=2.8.0'
+
+      - name: Install the package
+        run: pip install -e '.[dev]'
+
+      - name: pytest
+        env:
+          HF_HUB_OFFLINE: "1"
+          MPLBACKEND: Agg
+        run: pytest -q
+
+  scripts:
+    name: repro scripts parse; nothing generated is tracked
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Every figure directory has a repro.sh that is valid bash
+        run: |
+          for d in experiments/*/; do
+            case "$d" in experiments/common/|experiments/results/) continue;; esac
+            f="$d/repro.sh"; [ -f "$f" ] || { echo "missing $f"; exit 1; }
+            echo "bash -n $f"; bash -n "$f"
+          done
+
+      - name: Every repro.sh names scripts that exist
+        run: |
+          missing=0
+          for f in experiments/*/repro.sh; do
+            for py in $(grep -oE 'experiments/[A-Za-z0-9_/]+\.py' "$f" | sort -u); do
+              [ -f "$py" ] || { echo "$f references missing $py"; missing=1; }
+            done
+          done
+          exit $missing
+
+      - name: No generated artifacts are tracked
+        run: |
+          bad=$(git ls-files | grep -iE '\.(npz|npy|pkl|pt|h5|pdf|png)$' || true)
+          if [ -n "$bad" ]; then echo "tracked generated files:"; echo "$bad"; exit 1; fi
+          echo "clean"
